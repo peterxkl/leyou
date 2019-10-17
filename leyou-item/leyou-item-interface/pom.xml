@@ -23,9 +23,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.leyou.common</groupId>
+            <groupId>com.leyou.parent</groupId>
             <artifactId>leyou-common</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
