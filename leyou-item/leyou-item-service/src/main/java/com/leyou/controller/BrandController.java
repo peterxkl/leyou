@@ -3,14 +3,14 @@ package com.leyou.controller;
 import com.leyou.common.pojo.PageResult;
 import com.leyou.parameter.pojo.BrandQueryByPageParameter;
 import com.leyou.service.BrandServiceImpl;
+import com.sun.org.apache.regexp.internal.RE;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pojo.Brand;
+
+import java.util.List;
 
 /**
  * @author DillonXie
@@ -45,4 +45,35 @@ public class BrandController {
         }
         return ResponseEntity.ok(result);
     }
+
+    /**
+     * 新增品牌
+     * @param brand
+     * @param cids
+     * @return
+     */
+    @PostMapping
+    public ResponseEntity<Void> addBrand(Brand brand, @RequestParam("cids") List<Long> cids) {
+        brandService.saveBrand(brand,cids);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+
+
+    /**
+     * 修改品牌
+     */
+    @PutMapping
+    public ResponseEntity<Void> updateBrand(Brand brand, @RequestParam("cids") List<Long> cids) {
+        brandService.updateBrand(brand,cids);
+        return ResponseEntity.status(HttpStatus.ACCEPTED).build();
+    }
+
+    /**
+     * 删除品牌
+     */
+    public ResponseEntity<Void> deleteBrand(@RequestParam("bid") Long bid) {
+        brandService.deleteBrand(bid);
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
+
 }

@@ -3,12 +3,12 @@ package com.leyou.service;
 import com.leyou.enums.ExceptionEnums;
 import com.leyou.exception.LyException;
 import com.leyou.mapper.CategoryMapper;
+import com.leyou.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
-import pojo.Category;
+import com.leyou.item.pojo.Category;
 
-import java.util.Collections;
 import java.util.List;
 
 /**

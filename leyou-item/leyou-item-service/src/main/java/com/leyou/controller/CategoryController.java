@@ -1,14 +1,13 @@
 package com.leyou.controller;
 
 import com.leyou.service.CategoryService;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import pojo.Category;
+import com.leyou.item.pojo.Category;
 
 import java.util.List;
 
@@ -18,7 +17,7 @@ import java.util.List;
  * @date 2019/10/19 18:27
  */
 @RestController
-@RequestMapping("category")
+@RequestMapping("categorys")
 public class CategoryController {
 
     @Autowired
@@ -28,7 +27,7 @@ public class CategoryController {
      * 1.根据父节点查询商品类目
      * @return
      */
-    @RequestMapping("list")
+    @GetMapping
     public ResponseEntity<List<Category>> queryCategoryByPid(@RequestParam("Pid") Long pid) {
         return ResponseEntity.ok(categoryService.queryCategoryByPid(pid));
     }

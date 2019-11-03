@@ -4,6 +4,8 @@ import com.leyou.common.pojo.PageResult;
 import com.leyou.parameter.pojo.BrandQueryByPageParameter;
 import pojo.Brand;
 
+import java.util.List;
+
 /**
  * @author DillonXie
  * @version 1.0
@@ -16,4 +18,10 @@ public interface BrandService {
      * @return
      */
     PageResult<Brand> queryBrandByPage(BrandQueryByPageParameter brandQueryByPageParameter);
+
+    void saveBrand(Brand brand, List<Long> cids);
+
+    void updateBrand(Brand brand, List<Long> cids);
+
+    void deleteBrand(Long bid);
 }

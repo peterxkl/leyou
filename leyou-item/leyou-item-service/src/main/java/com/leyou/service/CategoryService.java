@@ -1,8 +1,7 @@
 package com.leyou.service;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import pojo.Category;
+import com.leyou.item.pojo.Category;
 
 import java.util.List;
 

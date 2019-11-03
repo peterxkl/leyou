@@ -1,4 +1,4 @@
-package pojo;
+package com.leyou.item.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,22 +13,19 @@ import java.io.Serializable;
 /**
  * @author DillonXie
  * @version 1.0
- * @date 2019/10/19 15:51
- * @feature: 商品分类对应的实体
+ * @date 10/23/2019 7:37 PM
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="tb_category")
-public class Category implements Serializable {
+@Table(name="tb_brand")
+public class Brand implements Serializable {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    //品牌名称
     private String name;
-    private Long parentId;
-    private Boolean isParent;
-    /**
-     * 排序指数，越小越靠前
-     */
-    private Integer sort;
+    //品牌图片
+    private String image;
+    private Character letter;
 }
